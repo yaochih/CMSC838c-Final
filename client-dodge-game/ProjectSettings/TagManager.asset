@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - cube
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - PlayerWall
   - 
   - 
   - 
