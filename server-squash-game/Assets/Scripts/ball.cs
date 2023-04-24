@@ -132,7 +132,6 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
         // IF BALL HITS SIDE WALLS, PLAY BALL CRACK SOUND 
         if (collision.transform.CompareTag("sideWall") && ballInPlay)
             ballCrack.Play();

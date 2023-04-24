@@ -5,13 +5,27 @@ public class CollisionHandler : MonoBehaviour
     public GameObject racket;
     public float ballSpeedMultiplier = 2.0f;
 
+    Vector3 lastFrameVelocity;
+    Vector3 currentFrameVelocity;
+    Rigidbody rigidbody;
+    void Start() {
+        rigidbody = GetComponent<Rigidbody>();
+    }
+
+    void Update() {
+        lastFrameVelocity = currentFrameVelocity;
+        currentFrameVelocity = rigidbody.velocity;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        Debug.Log(collision.gameObject);
+
+        if (collision.gameObject.tag == "Racket")
         {
-            Rigidbody ballRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-            Vector3 racketVelocity = racket.GetComponent<Rigidbody>().velocity;
-            ballRigidbody.velocity = (ballRigidbody.velocity + racketVelocity) * ballSpeedMultiplier;
+            Debug.Log("hit");
+            Vector3 dir = Vector3.Reflect(lastFrameVelocity, collision.contacts[0].normal);
+            rigidbody.velocity = dir * ballSpeedMultiplier;
         }
     }
 }
