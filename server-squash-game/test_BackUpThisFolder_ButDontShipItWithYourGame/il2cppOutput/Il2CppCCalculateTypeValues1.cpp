@@ -33241,6 +33241,18 @@ struct CollisionHandler_t43CD091F0FDAFDA2162A77A6D7B1A06E5A9E2215  : public Mono
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___racket_4;
 	// System.Single CollisionHandler::ballSpeedMultiplier
 	float ___ballSpeedMultiplier_5;
+	// UnityEngine.Vector3 CollisionHandler::racketVelocity
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___racketVelocity_6;
+	// UnityEngine.Vector3 CollisionHandler::lastFrameVelocity
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___lastFrameVelocity_7;
+	// UnityEngine.Vector3 CollisionHandler::currentFrameVelocity
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currentFrameVelocity_8;
+	// UnityEngine.Vector3 CollisionHandler::previousRacketPosition
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___previousRacketPosition_9;
+	// UnityEngine.Vector3 CollisionHandler::currentRacketPosition
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currentRacketPosition_10;
+	// UnityEngine.Rigidbody CollisionHandler::rigidbody
+	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ___rigidbody_11;
 };
 
 // Oculus.Interaction.Samples.ColorChanger
