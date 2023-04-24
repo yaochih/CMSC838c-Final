@@ -23708,6 +23708,8 @@ struct genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2  : public MonoBehavio
 	int32_t ___bullet_num_8;
 	// System.Single genObject::next_fire
 	float ___next_fire_9;
+	// System.Single genObject::target_zoffset
+	float ___target_zoffset_10;
 };
 
 // Oculus.Interaction.AudioPhysics/CollisionEvents
@@ -36201,9 +36203,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7280[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7281[4] = 
 {
 	static_cast<int32_t>(offsetof(CustomClient_t1652BF93DDB1D84661E6AFCB705B3BA24B4D498B, ___objectsSent_16)),static_cast<int32_t>(offsetof(CustomClient_t1652BF93DDB1D84661E6AFCB705B3BA24B4D498B, ___objectsReceived_17)),static_cast<int32_t>(offsetof(CustomClient_t1652BF93DDB1D84661E6AFCB705B3BA24B4D498B, ___anchors_18)),static_cast<int32_t>(offsetof(CustomClient_t1652BF93DDB1D84661E6AFCB705B3BA24B4D498B, ___homography_19)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7282[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7282[7] = 
 {
-	static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___gen_region_4)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___bullets_5)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___corners_6)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___target_7)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___bullet_num_8)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___next_fire_9)),};
+	static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___gen_region_4)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___bullets_5)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___corners_6)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___target_7)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___bullet_num_8)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___next_fire_9)),static_cast<int32_t>(offsetof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2, ___target_zoffset_10)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7283[3] = 
 {
 	static_cast<int32_t>(offsetof(U3CshoweffectU3Ed__8_t2A949D00402A27BE261BE09233FF893350C7CB01, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CshoweffectU3Ed__8_t2A949D00402A27BE261BE09233FF893350C7CB01, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CshoweffectU3Ed__8_t2A949D00402A27BE261BE09233FF893350C7CB01, ___U3CU3E4__this_2)),};

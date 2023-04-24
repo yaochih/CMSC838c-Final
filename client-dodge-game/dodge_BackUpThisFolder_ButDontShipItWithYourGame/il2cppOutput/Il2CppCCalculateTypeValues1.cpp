@@ -38688,6 +38688,8 @@ struct genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2  : public MonoBehavio
 	int32_t ___bullet_num_8;
 	// System.Single genObject::next_fire
 	float ___next_fire_9;
+	// System.Single genObject::target_zoffset
+	float ___target_zoffset_10;
 };
 
 // Oculus.Interaction.AudioPhysics/CollisionEvents
