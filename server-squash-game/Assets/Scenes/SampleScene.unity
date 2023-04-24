@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7a180040f1143a086ac93e52a1c1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ipAdress: 127.0.0.1
-  port: 13000
+  ipAdress: 10.104.139.10
+  port: 54001
   waitingMessagesFrequency: 0.001
   receivingTimeOut: 0
   m_ReceivedMessage: 
