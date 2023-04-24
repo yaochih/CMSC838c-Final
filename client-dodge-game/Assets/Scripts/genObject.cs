@@ -10,6 +10,7 @@ public class genObject : MonoBehaviour
     public Transform target;
     private int bullet_num;
     private float next_fire;
+    public float target_zoffset;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +55,9 @@ public class genObject : MonoBehaviour
         GameObject bullet;
         Vector3 pos = Randpos();
         bullet = Instantiate(bullets[idx], pos, Quaternion.identity);
-        bullet.GetComponent<Rigidbody>().velocity = (target.position - bullet.transform.position).normalized * 80.0f;
+        Vector3 dir = target.position - bullet.transform.position;
+        Vector3 adjust_target = new Vector3(dir.x+Random.Range(-5.0f, 5.0f), dir.y+target_zoffset, dir.z);
+        bullet.GetComponent<Rigidbody>().velocity = adjust_target.normalized * 60.0f;
         // yield return new WaitForSeconds(3);
     } 
 }

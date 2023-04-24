@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.name == "Plane (1)"){
+        if(other.gameObject.name == "Plane (1)" || other.gameObject.layer == 3){ //player
             Destroy(gameObject);
         }
     } 
