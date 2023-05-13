@@ -573,7 +573,7 @@ PrefabInstance:
     - target: {fileID: 4343868628721092243, guid: 9314c3d9be3a246f79eae5ca243c8003, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1225b04d37ea94c5e9e236dbe3353cec, type: 2}
+      objectReference: {fileID: 2100000, guid: 591574320a9fedf469b84eca75c03dbe, type: 2}
     - target: {fileID: 4975341251679219613, guid: 9314c3d9be3a246f79eae5ca243c8003, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -800,6 +800,13 @@ MonoBehaviour:
   gen_region: {fileID: 62003062}
   bullets:
   - {fileID: 528676951320774485, guid: 9314c3d9be3a246f79eae5ca243c8003, type: 3}
+  - {fileID: 528676951320774485, guid: 8d30d1b37f99d4c73b9549072522b370, type: 3}
+  - {fileID: 528676951320774485, guid: 081e32d027426424eb6ee2468b09fc0b, type: 3}
+  - {fileID: 528676951320774485, guid: 9aa4630c4ffd848698e15e08a704d957, type: 3}
+  - {fileID: 528676951320774485, guid: 61095ab26baf54e2e8b2eb682971a5e1, type: 3}
+  - {fileID: 528676951320774485, guid: 5188cfb20c22845978d80808ce42c77e, type: 3}
+  - {fileID: 528676951320774485, guid: 5f879098383ac47f3a112a37ca3d6b87, type: 3}
+  - {fileID: 528676951320774485, guid: 024806f4664fd4232b762b806e30486a, type: 3}
   target: {fileID: 137193662}
   target_zoffset: 11
 --- !u!1 &165979002

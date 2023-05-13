@@ -5,6 +5,7 @@ public class CollisionHandler : MonoBehaviour
     public GameObject racket;
     public float ballSpeedMultiplier = 2.0f;
     private Vector3 racketVelocity = Vector3.zero;
+    private AudioSource ballCrack;
 
 
     Vector3 lastFrameVelocity;
@@ -15,6 +16,7 @@ public class CollisionHandler : MonoBehaviour
     void Start() {
         rigidbody = GetComponent<Rigidbody>();
         currentRacketPosition = racket.transform.position;
+        ballCrack = GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -34,6 +36,7 @@ public class CollisionHandler : MonoBehaviour
             Debug.Log("hit");
             Vector3 dir = Vector3.Reflect(lastFrameVelocity, collision.contacts[0].normal);
             rigidbody.velocity = dir * ballSpeedMultiplier + racketVelocity;
+            ballCrack.Play();
             // rigidbody.velocity
         }
     }
