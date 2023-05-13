@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     private bool isstart;
     public float timeRemaining = 120;
     private Transform txtobject;
+    public GameObject CommunicatorObject;
     
     // Start is called before the first frame update
     void Start()
@@ -28,11 +29,12 @@ public class GameController : MonoBehaviour
     void Update()
     {
         if(!isready){
-            if(OVRInput.GetDown(OVRInput.Button.One)){
+            if(OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space)){
                 isready = true;
                 txtobject = canvas.transform.Find("ready");
                 txtobject.GetComponent<Text>().text = "Wait for your competitor.";
                 // startgame();
+                CommunicatorObject.GetComponent<CustomClient>().setGameState("ready");
             }
         } 
         if(isstart){
@@ -79,6 +81,7 @@ public class GameController : MonoBehaviour
         txtobject.GetComponent<Text>().text = "You Lose!";
         canvas.SetActive(true);
         Time.timeScale = 0;
+        CommunicatorObject.GetComponent<CustomClient>().setGameState("lose");
     }
 
     public void showwin(){

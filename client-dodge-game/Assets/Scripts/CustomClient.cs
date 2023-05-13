@@ -9,7 +9,7 @@ public class CustomClient : Client
 	public GameObject[] objectsSent;
 	public GameObject[] objectsReceived;
 	public GameObject[] anchors;
-	
+	public GameObject gameControllerObject;
 	public Matrix4x4 homography;
 
 	public string gameState;
@@ -39,12 +39,13 @@ public class CustomClient : Client
 	void checkGameState() {
 		if(gameState == "ready" && partnerGameState == "ready") {
 			// start_game();
+			gameControllerObject.GetComponent<GameController>().startgame();
 		}
 	}
 	public void setGameState(string _gameState) {
 		gameState = _gameState;
 	}
-	
+
 	void sendPacket() {
 		string message = PacketHandler.m_packetHead;
 		for(int i = 0; i < objectsSent.Length; i++) {
