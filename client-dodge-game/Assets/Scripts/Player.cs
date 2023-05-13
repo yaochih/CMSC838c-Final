@@ -33,12 +33,21 @@ public class Player : MonoBehaviour
             if(!hurt_effect.activeSelf){
                 hurt_AS.Play();
                 StartCoroutine(showeffect());
+                StartCoroutine(sendhaptic());
             }
         }
     } 
 
     public void OnTriggerEnter(Collider other){
 
+    }
+
+    IEnumerator sendhaptic(){
+        OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.RTouch);
+        OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.LTouch);
+        yield return new WaitForSeconds(1);
+        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
     }
 
     IEnumerator showeffect(){
