@@ -31,6 +31,7 @@ public class genObject : MonoBehaviour
 
         bullet_num =  corners.Length;
         StartCoroutine("Fire");
+        next_fire = 10;
     }
 
     // Update is called once per frame
