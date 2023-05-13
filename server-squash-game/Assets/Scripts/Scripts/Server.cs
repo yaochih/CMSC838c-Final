@@ -16,7 +16,8 @@ public class Server : MonoBehaviour
 	public int port = 54010;
 	[Min(0)] public float waitingMessagesFrequency = 1f;
 	[Tooltip("0 means time out is disabled")]
-	[Min(0)] public float receivingTimeOut = 0f;
+	[Min(0)] public float receivingTimeOut = 5f;
+
 	#endregion
 
 	#region  Private m_Variables
@@ -119,6 +120,7 @@ public class Server : MonoBehaviour
 			{
 				OnMessageReceived(m_ReceivedMessage);
 				m_BytesReceived = 0;
+				m_EllapsedTime = 0;
 			}
 
 			yield return new WaitForSeconds(waitingMessagesFrequency);
@@ -208,7 +210,7 @@ public class Server : MonoBehaviour
 			StopCoroutine(m_ListenClientMsgsCoroutine);
 			m_ListenClientMsgsCoroutine = null;
 		}
-
+		
 		OnServerClosed?.Invoke();
 	}
 
@@ -222,7 +224,6 @@ public class Server : MonoBehaviour
 			StopCoroutine(m_ListenClientMsgsCoroutine);
 			m_ListenClientMsgsCoroutine = null;
 		}
-
 		m_Client.Close();
 		m_Client = null;
 
@@ -237,12 +238,12 @@ public class Server : MonoBehaviour
 	//Custom Server Log - With Text Color
 	protected virtual void ServerLog(string msg, Color color)
 	{
-		Debug.Log($"<b>Server:</b> {msg}");
+		// Debug.Log($"<b>Server:</b> {msg}");
 	}
 	//Custom Server Log - Without Text Color
 	protected virtual void ServerLog(string msg)
 	{
-		Debug.Log($"<b>Server:</b> {msg}");
+		// Debug.Log($"<b>Server:</b> {msg}");
 	}
 	#endregion
 

@@ -17,10 +17,14 @@ public class CustomServer : Server
 	
 	public Matrix4x4 homography;
 
+	public string gameState;
+	public string partnerGameState;
+
 	protected virtual void Awake()
 	{
 		//Start Server
 		StartServer();
+		gameState = "serverwaitforready";
 
 		//Populate Server delegates
 		OnClientConnected = () => { clientConnected = true; };
@@ -28,21 +32,37 @@ public class CustomServer : Server
 		OnServerClosed = () => { serverConnected = false; };
 		OnServerStarted = () => { serverConnected = true; };
 
-		for(int i = 0; i < anchors.Length; i++) {
-			Debug.Log(anchors[i].transform.position);
-		}
+		// for(int i = 0; i < anchors.Length; i++) {
+		// 	Debug.Log(anchors[i].transform.position);
+		// }
 	}
 
 	protected override void Update()
 	{
 		base.Update();
-		sendObjectsTransform();
+		if(clientConnected) {
+			sendPacket();
+
+			checkGameState();
+		}
+		Debug.Log(clientConnected);
 	}
-	void sendObjectsTransform() {
+	void checkGameState() {
+		if(gameState == "ready" && partnerGameState == "ready") {
+			// start_game();
+		}
+	}
+	public void setGameState(string _gameState) {
+		gameState = _gameState;
+	}
+
+	void sendPacket() {
 		string message = PacketHandler.m_packetHead;
 		for(int i = 0; i < objectsSent.Length; i++) {
 			message += PacketHandler.makeElement(i, "null", objectsSent[i].transform);
 		}
+		message += PacketHandler.makeElement(gameState);
+
 		message += PacketHandler.m_packetFoot;
 		SendMessageToClient(message);
 	}
@@ -56,6 +76,9 @@ public class CustomServer : Server
 					int objIdx = PacketHandler.getObjectIndex(eles[i]);
 					Pose pose = PacketHandler.packet2Pose(eles[i]);
 					applyTransform(pose, objectsReceived[objIdx].transform);
+					break;
+				case 0:
+					partnerGameState = PacketHandler.getState(eles[i]);
 					break;
 				case -1: 
 					break;

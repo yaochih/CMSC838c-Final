@@ -12,24 +12,47 @@ public class CustomClient : Client
 	
 	public Matrix4x4 homography;
 
+	public string gameState;
+	public string partnerGameState;
+
 	private void Awake()
 	{
-		for(int i = 0; i < anchors.Length; i++) {
-			Debug.Log(anchors[i].transform.position);
-		}
+		// for(int i = 0; i < anchors.Length; i++) {
+		// 	Debug.Log(anchors[i].transform.position);
+		// }
 
 		//Start Client
+		serverConnected = false;
+		gameState = "clientwaitforready";
 		base.StartClient();
 	}
 	void Update() {
-		sendObjectsTransform();
-	}
+		if(serverConnected) {
+			sendPacket();
 
-	void sendObjectsTransform() {
+			checkGameState();
+		} else {
+			base.StartClient();
+		}
+		Debug.Log(serverConnected);
+	}
+	void checkGameState() {
+		if(gameState == "ready" && partnerGameState == "ready") {
+			// start_game();
+		}
+	}
+	public void setGameState(string _gameState) {
+		gameState = _gameState;
+	}
+	
+	void sendPacket() {
 		string message = PacketHandler.m_packetHead;
 		for(int i = 0; i < objectsSent.Length; i++) {
 			message += PacketHandler.makeElement(i, "null", objectsSent[i].transform);
 		}
+
+		message += PacketHandler.makeElement(gameState);
+
 		message += PacketHandler.m_packetFoot;
 		SendMessageToServer(message);
 	}
@@ -43,6 +66,9 @@ public class CustomClient : Client
 					int objIdx = PacketHandler.getObjectIndex(eles[i]);
 					Pose pose = PacketHandler.packet2Pose(eles[i]);
 					applyTransform(pose, objectsReceived[objIdx].transform);
+					break;
+				case 0:
+					partnerGameState = PacketHandler.getState(eles[i]);
 					break;
 				case -1: 
 					break;

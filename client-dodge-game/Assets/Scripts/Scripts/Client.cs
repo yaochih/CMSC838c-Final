@@ -14,15 +14,19 @@ public class Client : MonoBehaviour
 	public string ipAdress = "127.0.0.1";
 	public int port = 54010;
 	public float waitingMessagesFrequency = 1;
+	[Min(0)] public float receivingTimeOut = 5f;
+
 	#endregion
 
 	#region Private m_Variables
-	private TcpClient m_Client;
+	protected TcpClient m_Client;
+	public bool serverConnected;
 	private NetworkStream m_NetStream = null;
 	private byte[] m_Buffer = new byte[49152];
 	private int m_BytesReceived = 0;
 	private string m_ReceivedMessage = "";
 	private IEnumerator m_ListenServerMsgsCoroutine = null;
+	private float m_EllapsedTime = 0;
 
 	[Tooltip("This value should be >= to Server waitingMessagesFrequency")]
 	[Min(0)] private float m_DelayedCloseTime = 0.5f;
@@ -51,6 +55,7 @@ public class Client : MonoBehaviour
 			m_Client.Connect(ipAdress, port);
 			ClientLog($"Client Started on {ipAdress}::{port}", Color.green);
 			OnClientStarted?.Invoke();
+			serverConnected = true;
 			m_ListenServerMsgsCoroutine = ListenServerMessages();
 			StartCoroutine(m_ListenServerMsgsCoroutine);
 		}
@@ -78,15 +83,22 @@ public class Client : MonoBehaviour
 			ClientLog("Client is listening server msg...", Color.yellow);
 			//Start Async Reading from Server and manage the response on MessageReceived function
 			m_NetStream.BeginRead(m_Buffer, 0, m_Buffer.Length, MessageReceived, null);
-
+			Debug.Log(m_EllapsedTime);
 			if (m_BytesReceived > 0)
 			{
 				OnMessageReceived(m_ReceivedMessage);
 				m_BytesReceived = 0;
+				m_EllapsedTime = 0;
+				
 			}
 
 			yield return new WaitForSeconds(waitingMessagesFrequency);
-
+			m_EllapsedTime += waitingMessagesFrequency;
+			if (m_EllapsedTime >= receivingTimeOut && receivingTimeOut != 0)
+			{
+				CloseClient();
+				m_EllapsedTime = 0;
+			}
 		} while (m_BytesReceived >= 0 && m_NetStream != null && m_Client != null);
 		//Communication is over
 	}
@@ -161,7 +173,7 @@ public class Client : MonoBehaviour
 	private void CloseClient()
 	{
 		ClientLog("Client Closed", Color.red);
-
+		serverConnected = false;
 		//Reset everything to defaults
 		if (m_Client.Connected)
 			m_Client.Close();
@@ -182,12 +194,12 @@ public class Client : MonoBehaviour
 	//Custom Client Log - With Text Color
 	protected virtual void ClientLog(string msg, Color color)
 	{
-		Debug.Log($"<b>Client:</b> {msg}");
+		// Debug.Log($"<b>Client:</b> {msg}");
 	}
 	//Custom Client Log - Without Text Color
 	protected virtual void ClientLog(string msg)
 	{
-		Debug.Log($"<b>Client:</b> {msg}");
+		// Debug.Log($"<b>Client:</b> {msg}");
 	}
 	#endregion
 

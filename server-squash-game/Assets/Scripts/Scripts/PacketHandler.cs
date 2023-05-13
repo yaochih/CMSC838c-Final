@@ -11,12 +11,15 @@ class PacketHandler
     public static string m_packetFoot = "/p>";
     public static string m_transformHead = "<t/";
     public static string m_transformFoot = "/t>";
+    public static string m_gameStateHead = "<s/";
+    public static string m_gameStateFoot = "/s>";
     public static string m_indexHead = "<i/";
     public static string m_indexFoot = "/i>";
     public static string m_elementHead = "<e/>";
     public static string m_elementFoot = "/e>";
 
     public static string m_modeTransform = "<m/trans/m>";
+    public static string m_modeGameState = "<m/state/m>";
 
 
     // Mode: send object transform
@@ -30,7 +33,15 @@ class PacketHandler
                         m_elementFoot;
         return element;
     }
-
+    public static string makeElement(string state) {
+        string element = m_elementHead +
+                        m_modeGameState + 
+                        m_gameStateHead +
+                        state + 
+                        m_gameStateFoot +
+                        m_elementFoot;
+        return element;
+    }
     public static string getLastPacket(string _message) {
         string[] packets = _message.Split(m_packetHead);
         string lastPacket = packets[packets.Length - 1];
@@ -48,6 +59,7 @@ class PacketHandler
 
     public static int getPacketMode(string _packet) {
         if(_packet.Contains(m_modeTransform)) return 1; // object transformation mode
+        else if (_packet.Contains(m_modeGameState)) return 0; // game state
         else return -1;
     }
     public static int getObjectIndex(string _packet) {
@@ -55,6 +67,13 @@ class PacketHandler
         string lastPiece = pieces[pieces.Length - 1];
         lastPiece = lastPiece.Split(m_indexFoot)[0];
         return int.Parse(lastPiece);
+    }
+
+    public static string getState(string _packet) {
+        string[] pieces = _packet.Split(m_gameStateHead);
+        string lastPiece = pieces[pieces.Length - 1];
+        lastPiece = lastPiece.Split(m_gameStateFoot)[0];
+        return lastPiece;
     }
 
     public static Pose packet2Pose(string _message) {
