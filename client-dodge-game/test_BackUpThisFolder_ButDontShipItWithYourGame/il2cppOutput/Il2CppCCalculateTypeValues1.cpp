@@ -8952,14 +8952,14 @@ struct LayoutCache_tF844B2FAD6933B78FD5EFEBDE0529BCBAC19BA60  : public RuntimeOb
 	GUILayoutGroup_tD08496E80F283C290B5B90D7BFB3C9C7CC33CD8D* ___windows_3;
 };
 
-// GameController/<showcountdown>d__7
-struct U3CshowcountdownU3Ed__7_t87F89E0BFF43B97AFDB58C4D335154EE5B96831D  : public RuntimeObject
+// GameController/<showcountdown>d__13
+struct U3CshowcountdownU3Ed__13_t76E619FE19906115AED9A74A98E8AA867F7767AF  : public RuntimeObject
 {
-	// System.Int32 GameController/<showcountdown>d__7::<>1__state
+	// System.Int32 GameController/<showcountdown>d__13::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object GameController/<showcountdown>d__7::<>2__current
+	// System.Object GameController/<showcountdown>d__13::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// GameController GameController/<showcountdown>d__7::<>4__this
+	// GameController GameController/<showcountdown>d__13::<>4__this
 	GameController_tDA619EE453F7ED2C8297EF928518A0B447E44D09* ___U3CU3E4__this_2;
 };
 
@@ -9644,25 +9644,25 @@ struct Users_t97B43F4C576674F1C25B1BE033A295D9E08CAD0A  : public RuntimeObject
 {
 };
 
-// Player/<sendhaptic>d__8
-struct U3CsendhapticU3Ed__8_tB200CC31AE07F7CA973E3BFE4A8ACA9FA9E0DE21  : public RuntimeObject
+// Player/<sendhaptic>d__9
+struct U3CsendhapticU3Ed__9_t0FBBB5AB70ACA14FC32D5DE619C640CA125F81E4  : public RuntimeObject
 {
-	// System.Int32 Player/<sendhaptic>d__8::<>1__state
+	// System.Int32 Player/<sendhaptic>d__9::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object Player/<sendhaptic>d__8::<>2__current
+	// System.Object Player/<sendhaptic>d__9::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// Player Player/<sendhaptic>d__8::<>4__this
+	// Player Player/<sendhaptic>d__9::<>4__this
 	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___U3CU3E4__this_2;
 };
 
-// Player/<showeffect>d__9
-struct U3CshoweffectU3Ed__9_t84BE8F10FA8CC3314E33322B5361F2FA236D0A64  : public RuntimeObject
+// Player/<showeffect>d__10
+struct U3CshoweffectU3Ed__10_t178BF05CAD2CD6F386F2FD5B45961B9B27EC0D74  : public RuntimeObject
 {
-	// System.Int32 Player/<showeffect>d__9::<>1__state
+	// System.Int32 Player/<showeffect>d__10::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object Player/<showeffect>d__9::<>2__current
+	// System.Object Player/<showeffect>d__10::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// Player Player/<showeffect>d__9::<>4__this
+	// Player Player/<showeffect>d__10::<>4__this
 	Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74* ___U3CU3E4__this_2;
 };
 
@@ -34260,10 +34260,20 @@ struct GameController_tDA619EE453F7ED2C8297EF928518A0B447E44D09  : public MonoBe
 {
 	// UnityEngine.GameObject GameController::countdownTextObject
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___countdownTextObject_4;
+	// UnityEngine.GameObject GameController::canvas
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___canvas_5;
 	// TMPro.TextMeshPro GameController::countdownText
-	TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* ___countdownText_5;
+	TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* ___countdownText_6;
+	// UnityEngine.UI.Text GameController::timeText
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___timeText_7;
 	// System.Boolean GameController::isready
-	bool ___isready_6;
+	bool ___isready_8;
+	// System.Boolean GameController::isstart
+	bool ___isstart_9;
+	// System.Single GameController::timeRemaining
+	float ___timeRemaining_10;
+	// UnityEngine.Transform GameController::txtobject
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___txtobject_11;
 };
 
 // Oculus.Platform.Samples.VrBoardGame.GameController
@@ -36248,12 +36258,14 @@ struct Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74  : public MonoBehaviour_
 {
 	// UnityEngine.GameObject Player::hurt_effect
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___hurt_effect_4;
+	// UnityEngine.GameObject Player::GameEnv
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___GameEnv_5;
 	// UnityEngine.UI.Image Player::HealthBarImage
-	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___HealthBarImage_5;
+	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___HealthBarImage_6;
 	// System.Collections.Generic.List`1<UnityEngine.Color> Player::colors
-	List_1_t242CDEAEC9C92000DA96982CDB9D592DDE2AADAF* ___colors_6;
+	List_1_t242CDEAEC9C92000DA96982CDB9D592DDE2AADAF* ___colors_7;
 	// UnityEngine.AudioSource Player::hurt_AS
-	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___hurt_AS_7;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___hurt_AS_8;
 };
 
 // Oculus.Platform.Samples.VrHoops.Player
@@ -47186,9 +47198,9 @@ struct Number_t006CBC9914386BB171582F4C3A3EEB2EE404D461_StaticFields
 
 // UnityEngine.GUILayoutUtility/LayoutCache
 
-// GameController/<showcountdown>d__7
+// GameController/<showcountdown>d__13
 
-// GameController/<showcountdown>d__7
+// GameController/<showcountdown>d__13
 
 // Unity.XR.CoreUtils.GameObjectUtils/<>c__DisplayClass20_0
 
@@ -47603,13 +47615,13 @@ struct RaycastHitComparer_t8EF6567C19BE9FB575E01A10941FBF7DE3D3DDF1_StaticFields
 
 // Oculus.Platform.PlatformInternal/Users
 
-// Player/<sendhaptic>d__8
+// Player/<sendhaptic>d__9
 
-// Player/<sendhaptic>d__8
+// Player/<sendhaptic>d__9
 
-// Player/<showeffect>d__9
+// Player/<showeffect>d__10
 
-// Player/<showeffect>d__9
+// Player/<showeffect>d__10
 
 // UnityEngine.Networking.PlayerConnection.PlayerConnection/<>c__DisplayClass20_0
 
@@ -61313,15 +61325,15 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize7282 = { sizeof(CustomClient
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7283;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7283 = { sizeof(FollowHead_t6C1AB6DE704CB5EA6F6561A1B8309DCA98D8644E), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7284;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7284 = { sizeof(U3CshowcountdownU3Ed__7_t87F89E0BFF43B97AFDB58C4D335154EE5B96831D), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7284 = { sizeof(U3CshowcountdownU3Ed__13_t76E619FE19906115AED9A74A98E8AA867F7767AF), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7285;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7285 = { sizeof(GameController_tDA619EE453F7ED2C8297EF928518A0B447E44D09), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7286;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7286 = { sizeof(genObject_tF1E2BA5A96EB145C1C064C78B688DA6CEA2B9EB2), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7287;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7287 = { sizeof(U3CsendhapticU3Ed__8_tB200CC31AE07F7CA973E3BFE4A8ACA9FA9E0DE21), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7287 = { sizeof(U3CsendhapticU3Ed__9_t0FBBB5AB70ACA14FC32D5DE619C640CA125F81E4), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7288;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize7288 = { sizeof(U3CshoweffectU3Ed__9_t84BE8F10FA8CC3314E33322B5361F2FA236D0A64), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize7288 = { sizeof(U3CshoweffectU3Ed__10_t178BF05CAD2CD6F386F2FD5B45961B9B27EC0D74), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7289;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize7289 = { sizeof(Player_tF98BD09D3495D2FF1922E5D34866AEAC6AE2DF74), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize7290;
