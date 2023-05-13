@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public GameObject hurt_effect;
+    public GameObject GameEnv;
     public Image HealthBarImage;
     public List<Color> colors = new List<Color>();
     private AudioSource hurt_AS;
@@ -43,9 +44,9 @@ public class Player : MonoBehaviour
     }
 
     IEnumerator sendhaptic(){
-        OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.RTouch);
-        OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.LTouch);
-        yield return new WaitForSeconds(1);
+        OVRInput.SetControllerVibration(1, 0.5f, OVRInput.Controller.RTouch);
+        OVRInput.SetControllerVibration(1, 0.5f, OVRInput.Controller.LTouch);
+        yield return new WaitForSeconds(0.5f);
         OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
         OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
     }
@@ -67,6 +68,9 @@ public class Player : MonoBehaviour
         else{
             Debug.Log(colors[0]);
             SetHealthBarColor(colors[0]);
+        }
+        if(HealthBarImage.fillAmount == 0.0f){
+            GameEnv.GetComponent<GameController>().showlose();
         }
     }
 
