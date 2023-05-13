@@ -7,21 +7,25 @@ public class TimerController : MonoBehaviour
 {
     public float timeRemaining = 120;
     public float timeStart = 4;
+    public GameObject ball;
     public bool timeIsStarting = false;
     public bool timerIsRunning = false;
     public Text timeText;
+
     private void Start()
     {
         // Starts the timer automatically
         // timerIsRunning = true;
         Time.timeScale = 0;
+        // set ball's gravity to false
+        ball.GetComponent<Rigidbody>().useGravity = false;
     }
     void Update()
     {
         if (OVRInput.GetDown(OVRInput.Button.One)){
                 
                 timeIsStarting = true;
-                
+                Time.timeScale = 1;
         }
         startgame();
         // if (timeStart > 0 && timeIsStarting)
@@ -54,7 +58,7 @@ public class TimerController : MonoBehaviour
     }
 
     public void startgame(){
-        Time.timeScale = 1;
+        
         if (timeStart > 0 && timeIsStarting)
         {
                 DisplayReady(timeStart);
@@ -66,6 +70,7 @@ public class TimerController : MonoBehaviour
             timeIsStarting = false;
             timeText.text = string.Format("Start!");
             timerIsRunning = true;
+            ball.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 

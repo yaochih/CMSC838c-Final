@@ -33256,16 +33256,18 @@ struct CollisionHandler_t43CD091F0FDAFDA2162A77A6D7B1A06E5A9E2215  : public Mono
 	float ___ballSpeedMultiplier_5;
 	// UnityEngine.Vector3 CollisionHandler::racketVelocity
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___racketVelocity_6;
+	// UnityEngine.AudioSource CollisionHandler::ballCrack
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___ballCrack_7;
 	// UnityEngine.Vector3 CollisionHandler::lastFrameVelocity
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___lastFrameVelocity_7;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___lastFrameVelocity_8;
 	// UnityEngine.Vector3 CollisionHandler::currentFrameVelocity
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currentFrameVelocity_8;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currentFrameVelocity_9;
 	// UnityEngine.Vector3 CollisionHandler::previousRacketPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___previousRacketPosition_9;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___previousRacketPosition_10;
 	// UnityEngine.Vector3 CollisionHandler::currentRacketPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currentRacketPosition_10;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currentRacketPosition_11;
 	// UnityEngine.Rigidbody CollisionHandler::rigidbody
-	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ___rigidbody_11;
+	Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* ___rigidbody_12;
 };
 
 // Oculus.Interaction.Samples.ColorChanger
@@ -36501,12 +36503,14 @@ struct TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5  : public MonoB
 	float ___timeRemaining_4;
 	// System.Single TimerController::timeStart
 	float ___timeStart_5;
+	// UnityEngine.GameObject TimerController::ball
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ball_6;
 	// System.Boolean TimerController::timeIsStarting
-	bool ___timeIsStarting_6;
+	bool ___timeIsStarting_7;
 	// System.Boolean TimerController::timerIsRunning
-	bool ___timerIsRunning_7;
+	bool ___timerIsRunning_8;
 	// UnityEngine.UI.Text TimerController::timeText
-	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___timeText_8;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___timeText_9;
 };
 
 // Oculus.Voice.Demo.BuiltInDemo.TimerController
