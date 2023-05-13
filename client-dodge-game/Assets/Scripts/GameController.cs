@@ -30,7 +30,9 @@ public class GameController : MonoBehaviour
         if(!isready){
             if(OVRInput.GetDown(OVRInput.Button.One)){
                 isready = true;
-                startgame();
+                txtobject = canvas.transform.Find("ready");
+                txtobject.GetComponent<Text>().text = "Wait for your competitor.";
+                // startgame();
             }
         } 
         if(isstart){
