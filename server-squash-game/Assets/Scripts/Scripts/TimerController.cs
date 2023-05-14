@@ -11,6 +11,7 @@ public class TimerController : MonoBehaviour
     public bool timeIsStarting = false;
     public bool timerIsRunning = false;
     public Text timeText;
+    public bool isWin = false;
 
     private void Start()
     {
@@ -47,10 +48,15 @@ public class TimerController : MonoBehaviour
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
+                if (isWin){
+                    showwin();
+                    timeRemaining = 0;
+                    timerIsRunning = false;
+                }
             }
             else
             {
-                Debug.Log("Time has run out!");
+                showlose();
                 timeRemaining = 0;
                 timerIsRunning = false;
             }
@@ -72,6 +78,14 @@ public class TimerController : MonoBehaviour
             timerIsRunning = true;
             ball.GetComponent<Rigidbody>().useGravity = true;
         }
+    }
+
+    public void showwin(){
+        timeText.text = string.Format("You Win!");
+    }
+
+    public void showlose(){
+        timeText.text = string.Format("You Lose!");
     }
 
     void DisplayReady(float timeToDisplay)
