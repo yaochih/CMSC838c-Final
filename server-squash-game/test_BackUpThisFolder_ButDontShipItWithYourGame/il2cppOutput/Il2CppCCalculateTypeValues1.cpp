@@ -36511,6 +36511,8 @@ struct TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5  : public MonoB
 	bool ___timerIsRunning_8;
 	// UnityEngine.UI.Text TimerController::timeText
 	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___timeText_9;
+	// System.Boolean TimerController::isWin
+	bool ___isWin_10;
 };
 
 // Oculus.Voice.Demo.BuiltInDemo.TimerController

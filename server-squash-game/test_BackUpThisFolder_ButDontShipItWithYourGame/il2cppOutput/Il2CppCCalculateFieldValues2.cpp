@@ -22583,6 +22583,8 @@ struct TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5  : public MonoB
 	bool ___timerIsRunning_8;
 	// UnityEngine.UI.Text TimerController::timeText
 	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___timeText_9;
+	// System.Boolean TimerController::isWin
+	bool ___isWin_10;
 };
 
 // Oculus.Voice.Demo.BuiltInDemo.TimerController
@@ -35827,9 +35829,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7265[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7266[18] = 
 {
 	static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___ipAdress_4)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___port_5)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___waitingMessagesFrequency_6)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___receivingTimeOut_7)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_Server_8)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_Client_9)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_NetStream_10)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_Buffer_11)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_BytesReceived_12)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_EllapsedTime_13)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_TimeOutReached_14)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_ReceivedMessage_15)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___m_ListenClientMsgsCoroutine_16)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___OnServerStarted_17)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___OnServerClosed_18)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___OnClientConnected_19)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___OnClientDisconnected_20)),static_cast<int32_t>(offsetof(Server_t8BA95089B8ACB105BC4A1FFD8542E82CFD5015F3, ___OnUnsuccessfulStart_21)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7267[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7267[7] = 
 {
-	static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timeRemaining_4)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timeStart_5)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___ball_6)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timeIsStarting_7)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timerIsRunning_8)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timeText_9)),};
+	static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timeRemaining_4)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timeStart_5)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___ball_6)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timeIsStarting_7)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timerIsRunning_8)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___timeText_9)),static_cast<int32_t>(offsetof(TimerController_t9FACAA69550370472C446690F3AD92032ECE8CC5, ___isWin_10)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7268[1] = 
 {
 	static_cast<int32_t>(offsetof(StartForce_t2DE77C753F359E579DA7E54B171638ABD10E0957, ___startForce_4)),};
