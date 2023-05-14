@@ -69,6 +69,7 @@ public class CustomServer : Server
 		message += PacketHandler.makeElement(gameState);
 
 		message += PacketHandler.m_packetFoot;
+		Debug.Log("Send !!!! " + message);
 		SendMessageToClient(message);
 	}
 	protected override void OnMessageReceived(string receivedMessage) {

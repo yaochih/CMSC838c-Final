@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.01f;
         countdownText = countdownTextObject.GetComponent<TextMeshPro>();
         isready = false;
         isstart = false;
@@ -62,6 +62,8 @@ public class GameController : MonoBehaviour
 
     private void resumeGame(){
         Time.timeScale = 1;
+        CommunicatorObject.GetComponent<CustomClient>().waitingMessagesFrequency = 0.01f;
+        CommunicatorObject.GetComponent<CustomClient>().setGameState("run");
     }
 
     IEnumerator showcountdown(){
@@ -80,7 +82,7 @@ public class GameController : MonoBehaviour
         txtobject = canvas.transform.Find("ready");
         txtobject.GetComponent<Text>().text = "You Lose!";
         canvas.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0.01f;
         CommunicatorObject.GetComponent<CustomClient>().setGameState("lose");
     }
 
@@ -88,6 +90,6 @@ public class GameController : MonoBehaviour
         txtobject = canvas.transform.Find("ready");
         txtobject.GetComponent<Text>().text = "You Win!";
         canvas.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0.01f;
     }
 }

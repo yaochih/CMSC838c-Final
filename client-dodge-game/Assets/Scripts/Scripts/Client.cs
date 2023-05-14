@@ -80,7 +80,7 @@ public class Client : MonoBehaviour
 		//Start Async Reading from Server and manage the response on MessageReceived function
 		do
 		{
-			ClientLog("Client is listening server msg...", Color.yellow);
+			Debug.Log("Client is listening server msg...");
 			//Start Async Reading from Server and manage the response on MessageReceived function
 			m_NetStream.BeginRead(m_Buffer, 0, m_Buffer.Length, MessageReceived, null);
 			Debug.Log(m_EllapsedTime);
@@ -91,14 +91,17 @@ public class Client : MonoBehaviour
 				m_EllapsedTime = 0;
 				
 			}
-
 			yield return new WaitForSeconds(waitingMessagesFrequency);
+			Debug.Log("byte " + m_BytesReceived);
+			Debug.Log("stream " + m_NetStream);
+			Debug.Log("client " + m_Client);
 			m_EllapsedTime += waitingMessagesFrequency;
 			if (m_EllapsedTime >= receivingTimeOut && receivingTimeOut != 0)
 			{
 				CloseClient();
 				m_EllapsedTime = 0;
 			}
+			
 		} while (m_BytesReceived >= 0 && m_NetStream != null && m_Client != null);
 		//Communication is over
 	}

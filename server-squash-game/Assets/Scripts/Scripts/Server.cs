@@ -111,7 +111,7 @@ public class Server : MonoBehaviour
 		//While there is a connection with the client, await for messages
 		do
 		{
-			ServerLog("Server is listening client msg...", Color.yellow);
+			Debug.Log("Server is listening client msg...");
 			//Start Async Reading from Client and manage the response on MessageReceived function
 			m_NetStream.BeginRead(m_Buffer, 0, m_Buffer.Length, MessageReceived, m_NetStream);
 
@@ -168,7 +168,7 @@ public class Server : MonoBehaviour
 
 		//Start Sync Writing
 		m_NetStream.Write(encodedMessage, 0, encodedMessage.Length);
-		ServerLog($"Msg sended to Client: <b>{messageToSend}</b>", Color.blue);
+		Debug.Log($"Msg sended to Client: <b>{messageToSend}</b>");
 	}
 
 	//AsyncCallback called when "BeginRead" is ended, waiting the message response from client

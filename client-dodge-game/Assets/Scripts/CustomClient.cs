@@ -15,7 +15,7 @@ public class CustomClient : Client
 	public string gameState;
 	public string partnerGameState;
 	public string receivedMessage;
-
+	
 	private void Awake()
 	{
 		// for(int i = 0; i < anchors.Length; i++) {

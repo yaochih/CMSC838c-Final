@@ -66,7 +66,6 @@ public class TimerController : MonoBehaviour
     }
 
     public void startgame(){
-        
         if (timeStart > 0 && timeIsStarting)
         {
                 DisplayReady(timeStart);
@@ -77,6 +76,7 @@ public class TimerController : MonoBehaviour
             timeStart = 0;
             timeIsStarting = false;
             timeText.text = string.Format("Start!");
+            //communicatorObject.GetComponent<CustomServer>().setGameState("run");
             timerIsRunning = true;
             ball.GetComponent<Rigidbody>().useGravity = true;
         }
