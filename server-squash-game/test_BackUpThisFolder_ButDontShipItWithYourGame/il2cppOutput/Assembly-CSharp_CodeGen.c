@@ -1713,18 +1713,18 @@ extern void TargetArea_OnCollisionEnter_mBD9C0ED44F05583BB6A279550BEB4A4D9BC3DB3
 extern void TargetArea_showeffect_mDFB233B8E297DED779F17E45F1BED08D8D3F053A (void);
 // 0x0000035A System.Void TargetArea::.ctor()
 extern void TargetArea__ctor_mE2833BF1F5FF41E2EC24CC633C703C982427B3A5 (void);
-// 0x0000035B System.Void TargetArea/<showeffect>d__6::.ctor(System.Int32)
-extern void U3CshoweffectU3Ed__6__ctor_m0F523B0DD51F530348CA9B10BD22FCB97341726D (void);
-// 0x0000035C System.Void TargetArea/<showeffect>d__6::System.IDisposable.Dispose()
-extern void U3CshoweffectU3Ed__6_System_IDisposable_Dispose_mA8AE48037B71FAB6436B1E52A1F4FC74AE8049A4 (void);
-// 0x0000035D System.Boolean TargetArea/<showeffect>d__6::MoveNext()
-extern void U3CshoweffectU3Ed__6_MoveNext_mABD7420356B1CF61B6F6E458D97AF06CC549A3B0 (void);
-// 0x0000035E System.Object TargetArea/<showeffect>d__6::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CshoweffectU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2369A016392CE7F923572BB3A99F624B672C73E5 (void);
-// 0x0000035F System.Void TargetArea/<showeffect>d__6::System.Collections.IEnumerator.Reset()
-extern void U3CshoweffectU3Ed__6_System_Collections_IEnumerator_Reset_m78C50DF613DBAE20F890F2A035654B1B554631C8 (void);
-// 0x00000360 System.Object TargetArea/<showeffect>d__6::System.Collections.IEnumerator.get_Current()
-extern void U3CshoweffectU3Ed__6_System_Collections_IEnumerator_get_Current_mEEEF44FA475E27D54C411C9F35FDB86ACB4740EE (void);
+// 0x0000035B System.Void TargetArea/<showeffect>d__9::.ctor(System.Int32)
+extern void U3CshoweffectU3Ed__9__ctor_m82A220AA354C99DCBC61C5EE03D64C0BA008F533 (void);
+// 0x0000035C System.Void TargetArea/<showeffect>d__9::System.IDisposable.Dispose()
+extern void U3CshoweffectU3Ed__9_System_IDisposable_Dispose_m6F5493A0364EFE4E5A2B81029DE50C6C86494340 (void);
+// 0x0000035D System.Boolean TargetArea/<showeffect>d__9::MoveNext()
+extern void U3CshoweffectU3Ed__9_MoveNext_mD341E48E3C7B7E8A9E9F6C3D2A9BE515389DB8CF (void);
+// 0x0000035E System.Object TargetArea/<showeffect>d__9::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CshoweffectU3Ed__9_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m4446BC0E5FE55EBF45BFB049F4AAE96995D5959C (void);
+// 0x0000035F System.Void TargetArea/<showeffect>d__9::System.Collections.IEnumerator.Reset()
+extern void U3CshoweffectU3Ed__9_System_Collections_IEnumerator_Reset_m95EB1ECB54A56807EE1AEA007151C84F14DD4510 (void);
+// 0x00000360 System.Object TargetArea/<showeffect>d__9::System.Collections.IEnumerator.get_Current()
+extern void U3CshoweffectU3Ed__9_System_Collections_IEnumerator_get_Current_mD357A25CDF76E517DF41F8045434C5C0C294A879 (void);
 // 0x00000361 System.Boolean OculusSampleFramework.ColorGrabbable::get_Highlight()
 extern void ColorGrabbable_get_Highlight_m4F58065C790D757D19E29FBFBE43E5CD777C87E0 (void);
 // 0x00000362 System.Void OculusSampleFramework.ColorGrabbable::set_Highlight(System.Boolean)
@@ -3461,12 +3461,12 @@ static Il2CppMethodPointer s_methodPointers[1312] =
 	TargetArea_OnCollisionEnter_mBD9C0ED44F05583BB6A279550BEB4A4D9BC3DB34,
 	TargetArea_showeffect_mDFB233B8E297DED779F17E45F1BED08D8D3F053A,
 	TargetArea__ctor_mE2833BF1F5FF41E2EC24CC633C703C982427B3A5,
-	U3CshoweffectU3Ed__6__ctor_m0F523B0DD51F530348CA9B10BD22FCB97341726D,
-	U3CshoweffectU3Ed__6_System_IDisposable_Dispose_mA8AE48037B71FAB6436B1E52A1F4FC74AE8049A4,
-	U3CshoweffectU3Ed__6_MoveNext_mABD7420356B1CF61B6F6E458D97AF06CC549A3B0,
-	U3CshoweffectU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2369A016392CE7F923572BB3A99F624B672C73E5,
-	U3CshoweffectU3Ed__6_System_Collections_IEnumerator_Reset_m78C50DF613DBAE20F890F2A035654B1B554631C8,
-	U3CshoweffectU3Ed__6_System_Collections_IEnumerator_get_Current_mEEEF44FA475E27D54C411C9F35FDB86ACB4740EE,
+	U3CshoweffectU3Ed__9__ctor_m82A220AA354C99DCBC61C5EE03D64C0BA008F533,
+	U3CshoweffectU3Ed__9_System_IDisposable_Dispose_m6F5493A0364EFE4E5A2B81029DE50C6C86494340,
+	U3CshoweffectU3Ed__9_MoveNext_mD341E48E3C7B7E8A9E9F6C3D2A9BE515389DB8CF,
+	U3CshoweffectU3Ed__9_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m4446BC0E5FE55EBF45BFB049F4AAE96995D5959C,
+	U3CshoweffectU3Ed__9_System_Collections_IEnumerator_Reset_m95EB1ECB54A56807EE1AEA007151C84F14DD4510,
+	U3CshoweffectU3Ed__9_System_Collections_IEnumerator_get_Current_mD357A25CDF76E517DF41F8045434C5C0C294A879,
 	ColorGrabbable_get_Highlight_m4F58065C790D757D19E29FBFBE43E5CD777C87E0,
 	ColorGrabbable_set_Highlight_m8B7FE88DF23A163B4B49CEF2969F883E477498E7,
 	ColorGrabbable_UpdateColor_mCE9D7D0D07EFD5755541BA9DAB7E6CB8AA29DE2F,
