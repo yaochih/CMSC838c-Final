@@ -14,6 +14,7 @@ public class CustomClient : Client
 
 	public string gameState;
 	public string partnerGameState;
+	public string receivedMessage;
 
 	private void Awake()
 	{
@@ -57,8 +58,10 @@ public class CustomClient : Client
 		message += PacketHandler.m_packetFoot;
 		SendMessageToServer(message);
 	}
-	protected override void OnMessageReceived(string receivedMessage) {
-		string packet = PacketHandler.getLastPacket(receivedMessage);
+	protected override void OnMessageReceived(string _receivedMessage) {
+		Debug.Log("Received!!!!");
+		receivedMessage = _receivedMessage;
+		string packet = PacketHandler.getLastPacket(_receivedMessage);
 		string[] eles = PacketHandler.parseElements(packet);
 		for(int i = 0; i < eles.Length; i++) {
 			int mode = PacketHandler.getPacketMode(eles[i]);

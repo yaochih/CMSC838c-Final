@@ -8,7 +8,7 @@ public class CustomServer : Server
 {
 
 	private bool serverConnected = false;
-	private bool clientConnected = false;
+	public bool clientConnected = false;
 
 	public GameObject[] objectsSent;
 	public GameObject[] objectsReceived;
@@ -19,6 +19,8 @@ public class CustomServer : Server
 
 	public string gameState;
 	public string partnerGameState;
+
+	public GameObject gameControllerObject;
 
 	protected virtual void Awake()
 	{
@@ -32,9 +34,9 @@ public class CustomServer : Server
 		OnServerClosed = () => { serverConnected = false; };
 		OnServerStarted = () => { serverConnected = true; };
 
-		// for(int i = 0; i < anchors.Length; i++) {
-		// 	Debug.Log(anchors[i].transform.position);
-		// }
+		for(int i = 0; i < anchors.Length; i++) {
+		 	Debug.Log(anchors[i].transform.position);
+		}
 	}
 
 	protected override void Update()
@@ -50,6 +52,9 @@ public class CustomServer : Server
 	void checkGameState() {
 		if(gameState == "ready" && partnerGameState == "ready") {
 			// start_game();
+			gameControllerObject.GetComponent<TimerController>().timeIsStarting = true;
+		} else if (partnerGameState == "lose") {
+			gameControllerObject.GetComponent<TimerController>().isWin = true;
 		}
 	}
 	public void setGameState(string _gameState) {
@@ -71,6 +76,7 @@ public class CustomServer : Server
 		string[] eles = PacketHandler.parseElements(packet);
 		for(int i = 0; i < eles.Length; i++) {
 			int mode = PacketHandler.getPacketMode(eles[i]);
+			Debug.Log("Mode: " + mode);
 			switch (mode) {
 				case 1:	
 					int objIdx = PacketHandler.getObjectIndex(eles[i]);

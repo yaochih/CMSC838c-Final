@@ -13,6 +13,8 @@ public class TimerController : MonoBehaviour
     public Text timeText;
     public bool isWin = false;
 
+    public GameObject communicatorObject;
+
     private void Start()
     {
         // Starts the timer automatically
@@ -23,9 +25,9 @@ public class TimerController : MonoBehaviour
     }
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One)){
-                
-                timeIsStarting = true;
+        if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space)){
+                //timeIsStarting = true;
+                communicatorObject.GetComponent<CustomServer>().setGameState("ready");
                 Time.timeScale = 1;
         }
         startgame();

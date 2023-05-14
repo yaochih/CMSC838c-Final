@@ -58,6 +58,7 @@ class PacketHandler
     }
 
     public static int getPacketMode(string _packet) {
+        Debug.Log(_packet);
         if(_packet.Contains(m_modeTransform)) return 1; // object transformation mode
         else if (_packet.Contains(m_modeGameState)) return 0; // game state
         else return -1;
